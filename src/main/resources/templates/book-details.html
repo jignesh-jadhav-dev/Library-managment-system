@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Details</title>
+</head>
+<body>
+    <div style="width:500px; margin:auto; border:1px solid #ccc; padding:20px;">
+        <h2 style="text-align:center;" th:text="${book.title}"></h2>
+
+        <p><strong>Author:</strong> <span th:text="${book.author}"></span></p>
+        <p><strong>Description:</strong> <span th:text="${book.description}"></span></p>
+
+        <div style="text-align:center; margin-top:20px;">
+            <a th:href="@{/books/edit/{id}(id=${book.id})}">Edit</a> |
+            <a th:href="@{/books}">Back to Book List</a>
+        </div>
+    </div>
+</body>
+</html>

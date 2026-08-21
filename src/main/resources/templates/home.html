@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Library Management System</title>
+</head>
+<body>
+    <h1 style="text-align:center;">Welcome to the Library Catalog</h1>
+    <div style="text-align:center;">
+        <a th:href="@{/books/add}">Add New Book</a> |
+        <a th:href="@{/books}">Book List</a> |
+        <form th:action="@{/logout}" method="post" style="display:inline;">
+            <button type="submit" style="border:none; background:none; color:blue; text-decoration:underline; cursor:pointer; padding:0; font-size:inherit;">Logout</button>
+        </form>
+    </div>
+</body>
+</html>
