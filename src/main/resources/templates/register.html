@@ -1,39 +1,42 @@
-
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Registration</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-    <div style="width:300px; margin:80px auto; border:1px solid #ccc; padding:20px;">
+<div class="page">
+    <div class="card card-sm" style="margin-top:40px;">
         <h2>Registration</h2>
 
-        <p th:if="${error}" th:text="${error}" style="color:red;"></p>
+        <p class="error" th:if="${error}" th:text="${error}"></p>
 
         <form th:action="@{/register}" th:object="${user}" method="post">
+            <label>Username:</label>
+            <input type="text" th:field="*{username}"/>
+            <span class="error" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span>
 
-            <label>User Name:</label><br>
-            <input type="text" th:field="*{username}" style="width:100%;"/><br>
-            <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}" style="color:red;"></span><br><br>
+            <label>Password:</label>
+            <input type="password" th:field="*{password}"/>
+            <span class="error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
 
-            <label>Password:</label><br>
-            <input type="password" th:field="*{password}" style="width:100%;"/><br>
-            <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}" style="color:red;"></span><br><br>
+            <label>Email:</label>
+            <input type="text" th:field="*{email}"/>
+            <span class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
 
-            <label>Email:</label><br>
-            <input type="text" th:field="*{email}" style="width:100%;"/><br>
-            <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color:red;"></span><br><br>
+            <label>Full Name:</label>
+            <input type="text" th:field="*{fullName}"/>
+            <span class="error" th:if="${#fields.hasErrors('fullName')}" th:errors="*{fullName}"></span>
 
-            <label>Full Name:</label><br>
-            <input type="text" th:field="*{fullName}" style="width:100%;"/><br>
-            <span th:if="${#fields.hasErrors('fullName')}" th:errors="*{fullName}" style="color:red;"></span><br><br>
-
-            <button type="submit" style="width:100%; background:#337ab7; color:white; padding:10px;">Register</button>
+            <button type="submit" class="btn btn-blue">Register</button>
         </form>
 
-        <br>
-        <a th:href="@{/login}">Already have an account? Login here</a>
+        <div class="link-center">
+            <a class="link-blue" th:href="@{/login}">Already have an account? Login here</a>
+        </div>
     </div>
+</div>
 </body>
 </html>
