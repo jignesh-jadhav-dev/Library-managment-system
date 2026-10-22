@@ -1,0 +1,225 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #111;
+  background: #efefef;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.card {
+  width: 100%;
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+.card-sm {
+  max-width: 320px;
+}
+.card-md {
+  max-width: 640px;
+}
+
+h2 {
+  margin: 0 0 14px;
+  font-size: 17px;
+  font-weight: 700;
+  color: #111;
+}
+h2.center {
+  text-align: center;
+  font-size: 22px;
+  color: #333;
+  margin: 10px 0 18px;
+}
+
+h3 {
+  margin: 0 0 8px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #111;
+}
+
+label {
+  display: block;
+  margin: 10px 0 4px;
+  font-size: 12px;
+  color: #555;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea {
+  display: block;
+  width: 100%;
+  padding: 8px 10px;
+  font-family: inherit;
+  font-size: 13px;
+  color: #333;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+}
+input:focus,
+textarea:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.15);
+}
+input[readonly] {
+  background: #f7f7f7;
+  color: #777;
+}
+textarea {
+  height: 70px;
+  resize: vertical;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  margin-top: 14px;
+  padding: 9px;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  background: #4caf50;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.btn:hover {
+  filter: brightness(0.93);
+}
+.btn-green {
+  background: #4caf50;
+}
+.btn-blue {
+  background: #337ab7;
+}
+
+.error {
+  display: block;
+  margin-top: 3px;
+  font-size: 12px;
+  color: #d9534f;
+}
+.success {
+  margin: 0 0 10px;
+  font-size: 12px;
+  color: #3c763d;
+}
+
+a {
+  color: #4caf50;
+  text-decoration: none;
+  font-size: 12px;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.link-center {
+  margin-top: 18px;
+  text-align: center;
+}
+.link-blue {
+  color: #0000ee;
+  text-decoration: underline;
+}
+
+.home-head {
+  max-width: 100%;
+  padding: 20px;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.home-head h1 {
+  margin: 10px 0 12px;
+  text-align: center;
+  font-size: 22px;
+  color: #333;
+}
+.nav {
+  text-align: center;
+  margin-bottom: 14px;
+}
+.nav a,
+.nav button {
+  margin: 0 10px;
+  font-family: inherit;
+  font-size: 12px;
+  color: #4caf50;
+}
+.nav button {
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.nav button:hover {
+  text-decoration: underline;
+}
+.home-text {
+  margin: 0;
+  font-size: 11px;
+  color: #111;
+}
+
+.book {
+  padding: 12px 0 10px;
+  border-bottom: 1px solid #e6e6e6;
+}
+.book:first-of-type {
+  padding-top: 6px;
+}
+.book-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #4caf50;
+}
+.book-author {
+  margin: 6px 0 0;
+  font-size: 11px;
+}
+.book-actions {
+  margin-top: 6px;
+  font-size: 15px;
+}
+.book-actions a {
+  margin-right: 10px;
+  font-size: 15px;
+}
+.empty {
+  text-align: center;
+  color: #777;
+}
+
+.details p {
+  margin: 4px 0;
+  font-size: 11px;
+}
+.details strong {
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding: 20px 12px;
+  }
+}
