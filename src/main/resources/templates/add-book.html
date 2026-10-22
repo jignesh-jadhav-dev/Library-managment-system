@@ -2,30 +2,34 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Add New Book</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-    <h2 style="text-align:center;">Add New Book</h2>
+<div class="page">
+    <div class="card card-md">
+        <h2 class="center">Add New Book</h2>
 
-    <form th:action="@{/books/add}" th:object="${book}" method="post" style="width:400px; margin:auto;">
+        <form th:action="@{/books/add}" th:object="${book}" method="post">
+            <label>Title:</label>
+            <input type="text" th:field="*{title}"/>
+            <span class="error" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
 
-        <label>Title:</label><br>
-        <input type="text" th:field="*{title}" style="width:100%;"/><br>
-        <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}" style="color:red;"></span><br><br>
+            <label>Author:</label>
+            <input type="text" th:field="*{author}"/>
+            <span class="error" th:if="${#fields.hasErrors('author')}" th:errors="*{author}"></span>
 
-        <label>Author:</label><br>
-        <input type="text" th:field="*{author}" style="width:100%;"/><br>
-        <span th:if="${#fields.hasErrors('author')}" th:errors="*{author}" style="color:red;"></span><br><br>
+            <label>Description:</label>
+            <textarea th:field="*{description}"></textarea>
 
-        <label>Description:</label><br>
-        <textarea th:field="*{description}" style="width:100%;"></textarea><br><br>
+            <button type="submit" class="btn btn-green">Add Book</button>
+        </form>
 
-        <button type="submit" style="width:100%; background:#4CAF50; color:white; padding:10px;">Add Book</button>
-    </form>
-
-    <br>
-    <div style="text-align:center;">
-        <a th:href="@{/books}">Back to Book List</a>
+        <div class="link-center">
+            <a th:href="@{/books}">Back to Book List</a>
+        </div>
     </div>
+</div>
 </body>
 </html>
